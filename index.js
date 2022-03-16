@@ -1,30 +1,50 @@
 require("dotenv").config();
 require("./mongoose");
+
 const express = require("express");
 const exphbs = require("express-handlebars");
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 const helpers = require("./helpers");
 const port = 80;
+
 const app = express();
+
 app.engine(
-  "hbs",
-  exphbs.engine({
-    defaultLayout: "main",
-    extname: ".hbs",
-    helpers: require("./helpers"),
-  })
+	"hbs",
+	exphbs.engine({
+		defaultLayout: "main",
+		extname: ".hbs",
+		helpers: require("./helpers"),
+	})
 );
 app.set("view engine", "hbs");
 app.use(express.static("public"));
+
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-app.get("/", async (req, res) => {
-  res.send("Hello World!")
+app.use((req, res, next) => {
+	const { token } = req.cookies;
+
+	if (token && jwt.verify(token, process.env.JWT_SECRET)) {
+		const tokenData = jwt.decode(token, process.env.JWT_SECRET);
+		res.locals.loginInfo =
+			tokenData.username + " " + tokenData.userId + " " + tokenData.role;
+		res.locals.loginUser = tokenData.username;
+		res.locals.loginId = tokenData.userId;
+		res.locals.isLoggedIn = true;
+	} else {
+		res.locals.loginInfo = "not logged in";
+		res.locals.isLoggedIn = false;
+	}
+	next();
 });
 
+app.get("/", async (req, res) => {
+	res.send("Hello World!");
+});
 
 app.listen(port, () => {
-  console.log(`Listening to http://localhost:${port}`);
+	console.log(`Listening to http://localhost:${port}`);
 });
