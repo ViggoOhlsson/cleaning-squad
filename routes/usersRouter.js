@@ -4,7 +4,7 @@ const router = express.Router();
 const { UserModel } = require("../models/UsersModel.js");
 
 router.get("/registrera", (req, res) => {
-  res.render("/");
+  res.render("users/users-create");
 });
 
 module.exports = router;
