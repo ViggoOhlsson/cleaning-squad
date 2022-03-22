@@ -5,4 +5,4 @@ const employeeSchema = new Schema({
     type: {type:String, required:true, enum: ["cleaner", "admin"]}
 });
 const EmployeeModel = model("Employees", employeeSchema);
-module.exports = { EmployeeModel };
+module.exports = EmployeeModel
