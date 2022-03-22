@@ -1,8 +1,8 @@
 const { Schema, model } = require("mongoose");
-const usersSchema = new Schema({ 
+const employeeSchema = new Schema({ 
     username: { type: String, required: true },
     password: { type: String, required:true },
     type: {type:String, required:true, enum: ["cleaner", "admin"]}
 });
-const UsersModel = model("Users", usersSchema);
-module.exports = { UsersModel };
+const EmployeeModel = model("Employees", employeeSchema);
+module.exports = { EmployeeModel };

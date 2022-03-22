@@ -7,6 +7,6 @@ const bookingSchema = new Schema({
     type: {type: String, required: true, enum: ["Basic Städning", "Topp Städning", "Diamant Städning", "Fönstertvätt"]},
     status: {type: String, requiredtrue, enum: ["Inte Utförd", "Utförd", "Godkänd", "Inte Godkänd"]}
 })
-const BookingModel = model(bookingSchema)
+const BookingModel = model("bookings", bookingSchema)
 
 module.exports = BookingModel
