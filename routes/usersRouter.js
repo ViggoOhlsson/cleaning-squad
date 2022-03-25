@@ -4,6 +4,7 @@ const express = require("express");
 const router = express.Router();
 const utils = require("../utils.js");
 const UserModel = require("../models/UsersModel.js");
+const jwt = require("jsonwebtoken");
 
 router.get("/registrera", (req, res) => {
   res.render("users/users-create");
@@ -34,4 +35,25 @@ router.post("/registrera", async (req, res) => {
     }
   });
 });
+
+router.get("/logga-in", (req, res) => {
+  res.render("users/users-login");
+});
+
+router.post("/logga-in", async (req, res) => {
+  const { username, password } = req.body;
+
+  UserModel.findOne({ username }, (err, user) => {
+    if (user && utils.comparePassword(password, user.password)) {
+      const userData = { userId: user._id, username };
+      const accessToken = jwt.sign(userData, process.env.JWT_SECRET);
+      res.cookie("token", accessToken);
+      console.log("Logga in lyckades");
+      res.redirect("/");
+    } else {
+      res.render("users/users-login", { error: "Login misslyckad" });
+    }
+  });
+});
+
 module.exports = router;
