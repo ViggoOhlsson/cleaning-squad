@@ -2,6 +2,7 @@ require("dotenv").config();
 require("../mongoose.js");
 const express = require("express");
 const router = express.Router();
+const utils = require("../utils.js");
 const UserModel = require("../models/UsersModel.js");
 
 router.get("/registrera", (req, res) => {
@@ -24,7 +25,7 @@ router.post("/registrera", async (req, res) => {
     } else {
       const newUser = new UserModel({
         username,
-        password,
+        password: utils.hashPassword(password),
         email,
         address,
       });
