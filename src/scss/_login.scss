@@ -1,4 +1,4 @@
-.register-cnt {
+.login-cnt {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -7,28 +7,14 @@
 	width: 100vw;
 	gap: 1em;
 
-	.register-card {
+	.login-card {
 		background-color: hsl(0, 19%, 93%);
 		border-radius: 0.8em;
 		padding: 10em;
-		height: 25vh;
+		height: 12vh;
 	}
 
-	.new-user {
-		font-size: 2rem;
-		font-weight: 700;
-		color: hsl(0, 0%, 100%);
-	}
-
-	.register-form {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		gap: 2em;
-	}
-
-	.error-msg {
+	.error-msg-login {
 		display: flex;
 		justify-content: center;
 		text-align: center;
@@ -38,7 +24,22 @@
 		margin: 1em;
 	}
 
-	.input-create {
+	.login-user {
+		font-size: 2rem;
+		font-weight: 700;
+		color: hsl(0, 0%, 100%);
+		text-transform: uppercase;
+	}
+
+	.login-form {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 2em;
+	}
+
+	.login-input {
 		border-radius: 0.4em;
 		outline-style: none;
 		border: none;
@@ -49,7 +50,7 @@
 		font-weight: 300;
 	}
 
-	.reg-btn {
+	.login-btn {
 		justify-content: center;
 		background-color: hsl(348, 97%, 63%);
 		color: hsl(0, 0%, 98%);
@@ -61,7 +62,7 @@
 		border-radius: 0.4em;
 	}
 
-	.reg-btn:hover {
+	.login-btn:hover {
 		opacity: 0.7;
 	}
 }

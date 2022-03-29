@@ -99,12 +99,14 @@ input[type="checkbox"] {
 	position: relative;
 	float: right;
 	margin-top: 3px;
+	border-radius: 0.4em;
 }
 .diagonal.part-1 {
 	position: relative;
 	transition: all 0.3s;
 	box-sizing: border-box;
 	float: right;
+	border-radius: 0.4em;
 }
 .diagonal.part-2 {
 	transition: all 0.3s;
@@ -112,6 +114,7 @@ input[type="checkbox"] {
 	position: relative;
 	float: right;
 	margin-top: 3px;
+	border-radius: 0.4em;
 }
 input[type="checkbox"]:checked ~ .sidebarIconToggle > .horizontal {
 	transition: all 0.3s;

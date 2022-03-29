@@ -1,7 +1,21 @@
-<span class="login-user">Logga in</span>
-<span class="error-msg">{{error}}</span>
-<form action="/anvandare/logga-in" method="post" class="login-form">
-	<input type="text" name="username" placeholder="Användarnamn" />
-	<input type="password" name="password" placeholder="Lösenord" />
-	<input type="submit" value="Logga in" />
-</form>
+<div class="login-cnt">
+	<span class="login-user">logga in</span>
+	<div class="login-card">
+		<form action="/anvandare/logga-in" method="post" class="login-form">
+			<input
+				class="login-input"
+				type="text"
+				name="username"
+				placeholder="Användarnamn"
+			/>
+			<input
+				class="login-input"
+				type="password"
+				name="password"
+				placeholder="Lösenord"
+			/>
+			<input type="submit" value="Logga in" class="login-btn" />
+		</form>
+		<span class="error-msg-login">{{error}}</span>
+	</div>
+</div>

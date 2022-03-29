@@ -184,13 +184,14 @@ footer {
 	height: 80px;
 	background: hsl(348, 97%, 63%);
 	position: absolute;
-	right: 0;
+	left: 0;
 	bottom: -80px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	animation: top 0.8s forwards;
 	animation-delay: 4s;
+	text-transform: uppercase;
 	span {
 		display: flex;
 		align-items: center;
