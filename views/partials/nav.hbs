@@ -7,10 +7,13 @@
 </label>
 <div id="sidebarMenu">
 	<ul class="sidebarMenuInner">
-		<li>användarnamn <span>ditt Konto</span></li>
-		<li><a href="#">boka en städning</a></li>
-		<li><a href="/anvandare/logga-in">logga In</a></li>
-		<li><a href="#">logga ut</a></li>
+		{{#if isLoggedIn}}
+			<li>{{loginUser}}<span>ditt Konto</span></li>
+			<li><a href="#">boka en städning</a></li>
+			<li><a href="/anvandare/logga-ut">logga ut</a></li>
+		{{else}}
+			<li><a href="/anvandare/logga-in">logga In</a></li>
+		{{/if}}
 		<li><a href="#">kontakta oss</a></li>
 	</ul>
 </div>

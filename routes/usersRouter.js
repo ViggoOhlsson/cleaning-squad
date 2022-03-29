@@ -56,4 +56,9 @@ router.post("/logga-in", async (req, res) => {
 	});
 });
 
+router.get("/logga-ut", (req, res) => {
+	res.cookie("token", "", { maxAge: 0 });
+	res.redirect("/");
+});
+
 module.exports = router;
