@@ -11,6 +11,7 @@ const port = 80;
 const app = express();
 
 const usersRouter = require("./routes/usersRouter.js");
+const contactsRouter = require("./routes/contactsRoute.js");
 
 app.engine(
 	"hbs",
@@ -44,6 +45,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/anvandare", usersRouter);
+app.use("/kontakt", contactsRouter);
 
 app.get("/", (req, res) => {
 	res.render("home");
