@@ -11,9 +11,12 @@ body {
 	font-family: "Roboto", sans-serif;
 	font-size: 62.5%;
 	color: #303030;
+	background-color: hsl(201, 43%, 34%);
 
 	overflow-x: hidden;
 	height: 100%;
 }
 
 @import "./_navbar.scss";
+@import "./_register.scss";
+@import "./_home.scss";

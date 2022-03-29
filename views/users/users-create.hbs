@@ -1,14 +1,19 @@
-<h2>Ny Användare</h2>
-<h3>{{error}}</h3>
-<form action="/anvandare/registrera" method="post">
-	<input type="text" name="username" placeholder="Användarnamn" />
-	<input type="email" name="email" placeholder="E-mail" />
-	<input type="text" name="address" placeholder="Address" />
-	<input type="password" name="password" placeholder="Lösenord" />
-	<input
-		type="password"
-		name="confirmPassword"
-		placeholder="Bekräfta Lösenord"
-	/>
-	<input type="submit" value="Register" />
-</form>
+<div class="register-cnt">
+	<span class="new-user">REGISTRERA NY ANVÄNDARE</span>
+	<div class="register-card">
+
+		<form action="/anvandare/registrera" method="post" class="register-form">
+			<input type="text" name="username" placeholder="Användarnamn" />
+			<input type="email" name="email" placeholder="E-mail" />
+			<input type="text" name="address" placeholder="Address" />
+			<input type="password" name="password" placeholder="Lösenord" />
+			<input
+				type="password"
+				name="confirmPassword"
+				placeholder="Bekräfta Lösenord"
+			/>
+			<input type="submit" value="REGISTRERA" class="reg-btn" />
+		</form>
+		<span class="error-msg">{{error}}</span>
+	</div>
+</div>

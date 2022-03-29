@@ -1,7 +1,7 @@
-<h2>Logga in</h2>
-<h3>{{error}}</h3>
-<form action="/anvandare/logga-in" method="post">
-  <input type="text" name="username" placeholder="Användarnamn" />
-  <input type="password" name="password" placeholder="Lösenord" />
-  <input type="submit" value="Logga in" />
+<span class="login-user">Logga in</span>
+<span class="error-msg">{{error}}</span>
+<form action="/anvandare/logga-in" method="post" class="login-form">
+	<input type="text" name="username" placeholder="Användarnamn" />
+	<input type="password" name="password" placeholder="Lösenord" />
+	<input type="submit" value="Logga in" />
 </form>

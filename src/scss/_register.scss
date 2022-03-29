@@ -1,0 +1,53 @@
+.register-cnt {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	gap: 1em;
+
+	.register-card {
+		background-color: hsl(0, 14%, 89%);
+		border-radius: 0.4em;
+		padding: 10em;
+	}
+
+	.new-user {
+		font-size: 2rem;
+		font-weight: 700;
+		color: hsl(0, 0%, 100%);
+	}
+
+	.register-form {
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+	}
+
+	.error-msg {
+		font-size: 1.4rem;
+		font-weight: 600;
+		color: hsl(0, 66%, 49%);
+		margin: 0.4em;
+	}
+
+	input {
+		border-radius: 0.4em;
+		outline-style: none;
+		border: none;
+		padding: 0.4em;
+		width: 20vw;
+	}
+
+	.reg-btn {
+		background-color: hsl(348, 97%, 63%);
+		color: hsl(0, 0%, 98%);
+		font-weight: 600;
+		cursor: pointer;
+	}
+
+	.reg-btn:hover {
+		opacity: 0.7;
+	}
+}
