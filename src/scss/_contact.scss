@@ -1,45 +1,42 @@
-.login-cnt {
+.contact-cnt {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	text-align: center;
 	width: 100vw;
-	gap: 1em;
+	height: 100vh;
 
-	.login-card {
-		background-color: hsl(0, 19%, 93%);
-		border-radius: 0.8em;
-		padding: 10em;
-		height: 12vh;
-	}
-
-	.error-msg-login {
-		display: flex;
-		justify-content: center;
-		text-align: center;
-		font-size: 1.4rem;
-		font-weight: 600;
-		color: hsl(0, 90%, 62%);
-		margin: 1em;
-	}
-
-	.login-user {
-		font-size: 2rem;
+	.contact-span {
+		font-size: 3rem;
 		font-weight: 700;
 		color: hsl(0, 0%, 100%);
 		text-transform: uppercase;
+		margin: 0.5em;
 	}
 
-	.login-form {
+	.contact-card {
+		background-color: hsl(0, 19%, 93%);
+		border-radius: 0.8em;
+		padding: 4em;
+		width: 20vw;
+	}
+
+	.ange {
+		font-size: 1.4rem;
+		font-weight: 300;
+	}
+
+	.contact-form {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
 		align-items: center;
 		gap: 2em;
+		margin: 2em;
+		padding: 0;
 	}
 
-	.login-input {
+	.contact-input {
 		border-radius: 0.4em;
 		outline-style: none;
 		padding: 0.4em;
@@ -49,7 +46,18 @@
 		font-weight: 300;
 	}
 
-	.login-btn {
+	.contact-text {
+		border-radius: 0.4em;
+		outline-style: none;
+		padding: 0.4em;
+		width: 20vw;
+		border: 2px solid hsl(0, 0%, 76%);
+		font-family: "Roboto", sans-serif;
+		font-weight: 300;
+		resize: none;
+	}
+
+	.contact-btn {
 		justify-content: center;
 		background-color: hsl(348, 97%, 63%);
 		color: hsl(0, 0%, 98%);
@@ -59,9 +67,10 @@
 		padding: 0.5em;
 		box-shadow: 0px 3px 5px hsl(0, 0%, 41%);
 		border-radius: 0.4em;
+		text-transform: uppercase;
 	}
 
-	.login-btn:hover {
+	.contact-btn:hover {
 		opacity: 0.7;
 	}
 }

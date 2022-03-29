@@ -13,11 +13,20 @@
 
 	</div>
 </div>
-
-<a href="/anvandare/registrera">
-	<footer>
-		<div class="texto">
-			<span>registrera ny användare</span>
-		</div>
-	</footer>
-</a>
+{{#if isLoggedIn}}
+	<a href="/kontakt">
+		<footer>
+			<div class="texto">
+				<span>kontakta oss</span>
+			</div>
+		</footer>
+	</a>
+{{else}}
+	<a href="/anvandare/registrera">
+		<footer>
+			<div class="texto">
+				<span>registrera ny användare</span>
+			</div>
+		</footer>
+	</a>
+{{/if}}

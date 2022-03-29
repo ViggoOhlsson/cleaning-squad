@@ -16,6 +16,14 @@
 	margin-left: 15px;
 	font-size: 3rem;
 	font-weight: 700;
+}
+
+.home-li {
+	text-decoration: none;
+	color: hsl(0, 0%, 100%);
+}
+
+.home-li:visited {
 	color: hsl(0, 0%, 100%);
 }
 
@@ -24,6 +32,10 @@
 	display: block;
 	height: 100%;
 	margin-top: 60px;
+}
+
+.account-li {
+	text-decoration: none;
 }
 
 #sidebarMenu {
