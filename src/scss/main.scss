@@ -11,4 +11,9 @@ body {
 	font-family: "Roboto", sans-serif;
 	font-size: 62.5%;
 	color: #303030;
+
+	overflow-x: hidden;
+	height: 100%;
 }
+
+@import "./_navbar.scss";
