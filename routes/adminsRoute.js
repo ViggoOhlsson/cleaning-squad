@@ -58,7 +58,7 @@ router.post("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
 	const employee = await EmployeeModel.findById(req.params.id);
 
-	res.render("admin/admin-profile", { employee });
+	res.render("admin/admin-profile", employee);
 });
 
 module.exports = router;
