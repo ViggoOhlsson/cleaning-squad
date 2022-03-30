@@ -5,6 +5,7 @@
 	flex-direction: column;
 	width: 100vw;
 	height: 100vh;
+	gap: 2em;
 
 	.info-span {
 		font-size: 3rem;
@@ -24,6 +25,25 @@
 	}
 
 	.profile-info {
-		font-size: 1.4rem;
+		font-size: 1.6rem;
+	}
+
+	.your-bookings {
+		font-size: 2rem;
+		font-weight: 700;
+		color: hsl(0, 0%, 100%);
+		text-transform: uppercase;
+		margin: 0.5em;
+	}
+
+	.booking-card {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: hsl(0, 19%, 93%);
+		border-radius: 0.8em;
+		padding: 4em;
+		width: 20vw;
 	}
 }

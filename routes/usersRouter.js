@@ -52,10 +52,10 @@ router.post("/logga-in", async (req, res) => {
 			const userData = { userId: user._id, username };
 			const accessToken = jwt.sign(userData, process.env.JWT_SECRET);
 			res.cookie("token", accessToken);
-			console.log("Logga in lyckades");
+			console.log("Inloggning lyckades");
 			res.redirect("/");
 		} else {
-			res.render("users/users-login", { error: "Login misslyckades" });
+			res.render("users/users-login", { error: "Inloggning misslyckades" });
 		}
 	});
 });
@@ -68,7 +68,9 @@ router.get("/logga-ut", (req, res) => {
 router.get("/:id", async (req, res) => {
 	const user = await UserModel.findById(req.params.id);
 
-	res.render("users/users-account", { user });
+	console.log(user);
+
+	res.render("users/users-account", user);
 });
 
 module.exports = router;

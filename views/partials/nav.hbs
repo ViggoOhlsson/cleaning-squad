@@ -1,22 +1,22 @@
 <div class="header">
-  <span class="logo-title"><a href="/" class="home-li">Städa Fint AB</a></span>
+	<span class="logo-title"><a href="/" class="home-li">Städa Fint AB</a></span>
 </div>
 <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu" />
 <label for="openSidebarMenu" class="sidebarIconToggle">
-  <div class="spinner diagonal part-1"></div>
-  <div class="spinner horizontal"></div>
-  <div class="spinner diagonal part-2"></div>
+	<div class="spinner diagonal part-1"></div>
+	<div class="spinner horizontal"></div>
+	<div class="spinner diagonal part-2"></div>
 </label>
 <div id="sidebarMenu">
-  <ul class="sidebarMenuInner">
-    {{#if isLoggedIn}}
-      <li>{{loginUser}}<a href="/anvandare/{{loginId}}" class="account-li"><span
-          >ditt konto</span></a></li>
-      <li><a href="/bokning">boka en städning</a></li>
-      <li><a href="/anvandare/logga-ut">logga ut</a></li>
-    {{else}}
-      <li><a href="/anvandare/logga-in">logga In</a></li>
-    {{/if}}
-    <li><a href="/kontakt">kontakta oss</a></li>
-  </ul>
+	<ul class="sidebarMenuInner">
+		{{#if isLoggedIn}}
+			<li>{{loginUser}}<a href="/anvandare/{{loginId}}" class="account-li"><span
+					>ditt konto</span></a></li>
+			<li><a href="/bookning">boka en städning</a></li>
+			<li><a href="/anvandare/logga-ut">logga ut</a></li>
+		{{else}}
+			<li><a href="/anvandare/logga-in">logga In</a></li>
+		{{/if}}
+		<li><a href="/kontakt">kontakta oss</a></li>
+	</ul>
 </div>
