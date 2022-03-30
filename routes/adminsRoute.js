@@ -39,11 +39,11 @@ router.post("/skapa", async (req, res) => {
 	});
 });
 
-router.post("/logga-in", async (req, res) => {
+router.post("/", async (req, res) => {
 	const { username, password } = req.body;
 
 	EmployeeModel.findOne({ username }, (err, user) => {
-		if (employee && utils.comparePassword(password, user.password)) {
+		if (user && utils.comparePassword(password, user.password)) {
 			const userData = { userId: user._id, username };
 			const accessToken = jwt.sign(userData, process.env.JWT_SECRET);
 			res.cookie("token", accessToken);
