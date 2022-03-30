@@ -1,15 +1,47 @@
-.data-info {
-  color: white;
-  width: 642px;
-  font-size: 12px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 .data-container {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+
+	.data-info {
+		background-color: hsl(0, 19%, 93%);
+		width: 60vw;
+		height: 70vh;
+		font-size: 12px;
+		text-align: center;
+		overflow: scroll;
+		border-radius: 0.8em;
+		padding: 1em;
+	}
+
+	.tillbaka {
+		justify-content: center;
+		background-color: hsl(348, 97%, 63%);
+		color: hsl(0, 0%, 98%);
+		cursor: pointer;
+		border: none;
+		padding: 0.5em;
+		box-shadow: 0px 3px 5px hsl(0, 0%, 41%);
+		border-radius: 0.4em;
+	}
+
+	.back-to {
+		display: flex;
+		justify-content: center;
+		margin: 2em;
+	}
+
+	.tillbaka-li {
+		font-size: 1.5rem;
+		font-weight: 600;
+		color: hsl(0, 0%, 98%);
+		text-decoration: none;
+	}
+
+	.tillbaka-li:visited {
+		color: hsl(0, 0%, 98%);
+	}
 }
