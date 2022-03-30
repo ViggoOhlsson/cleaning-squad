@@ -12,6 +12,7 @@ const app = express();
 
 const usersRouter = require("./routes/usersRouter.js");
 const contactsRouter = require("./routes/contactsRoute.js");
+const adminsRouter = require("./routes/adminsRoute.js");
 
 app.engine(
 	"hbs",
@@ -46,6 +47,7 @@ app.use((req, res, next) => {
 
 app.use("/anvandare", usersRouter);
 app.use("/kontakt", contactsRouter);
+app.use("/admin", adminsRouter);
 
 app.get("/", (req, res) => {
 	res.render("home");

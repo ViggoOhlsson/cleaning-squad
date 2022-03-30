@@ -1,0 +1,32 @@
+<div class="admin-create-cnt">
+	<span class="new-admin">REGISTRERA NY ADMIN / ANSTÄLLD</span>
+	<div class="admin-create-card">
+
+		<form action="/admin/skapa" method="post" class="admin-create-form">
+			<input
+				class="admin-create-span"
+				type="text"
+				name="username"
+				placeholder="Användarnamn"
+			/>
+			<input
+				class="admin-create-span"
+				type="password"
+				name="password"
+				placeholder="Lösenord"
+			/>
+			<input
+				class="admin-create-span"
+				type="password"
+				name="confirmPassword"
+				placeholder="Bekräfta Lösenord"
+			/>
+			<select name="type" class="admin-select">
+				<option name="admin" value="admin">Admin</option>
+				<option name="employee" value="employee">Employee</option>
+			</select>
+			<input type="submit" value="REGISTRERA" class="admin-create-btn" />
+		</form>
+		<span class="error-msg">{{error}}</span>
+	</div>
+</div>

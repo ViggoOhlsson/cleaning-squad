@@ -1,0 +1,77 @@
+.admin-create-cnt {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	gap: 1em;
+
+	.admin-create-card {
+		background-color: hsl(0, 19%, 93%);
+		border-radius: 0.8em;
+		padding: 10em;
+	}
+
+	.new-admin {
+		font-size: 2rem;
+		font-weight: 700;
+		color: hsl(0, 0%, 100%);
+	}
+
+	.admin-create-form {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 2em;
+	}
+
+	.error-msg {
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		font-size: 1.4rem;
+		font-weight: 600;
+		color: hsl(0, 90%, 62%);
+		margin: 1em;
+	}
+
+	.admin-create-span {
+		border-radius: 0.4em;
+		outline-style: none;
+		border: none;
+		padding: 0.4em;
+		width: 20vw;
+		border: 2px solid hsl(0, 0%, 76%);
+		font-family: "Roboto", sans-serif;
+		font-weight: 300;
+	}
+
+	.admin-select {
+		border-radius: 0.4em;
+		outline-style: none;
+		border: none;
+		padding: 0.4em;
+		width: 20vw;
+		border: 2px solid hsl(0, 0%, 76%);
+		font-family: "Roboto", sans-serif;
+		font-weight: 300;
+	}
+
+	.admin-create-btn {
+		justify-content: center;
+		background-color: hsl(348, 97%, 63%);
+		color: hsl(0, 0%, 98%);
+		font-weight: 600;
+		cursor: pointer;
+		border: none;
+		padding: 0.5em;
+		box-shadow: 0px 3px 5px hsl(0, 0%, 41%);
+		border-radius: 0.4em;
+	}
+
+	.admin-create-btn:hover {
+		opacity: 0.7;
+	}
+}

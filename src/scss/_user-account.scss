@@ -1,0 +1,29 @@
+.users-cnt {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+
+	.info-span {
+		font-size: 3rem;
+		font-weight: 700;
+		color: hsl(0, 0%, 100%);
+		text-transform: uppercase;
+		margin: 0.5em;
+	}
+
+	.users-card {
+		display: flex;
+		flex-direction: column;
+		background-color: hsl(0, 19%, 93%);
+		border-radius: 0.8em;
+		padding: 4em;
+		width: 20vw;
+	}
+
+	.profile-info {
+		font-size: 1.4rem;
+	}
+}
