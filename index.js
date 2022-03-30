@@ -34,12 +34,13 @@ app.use((req, res, next) => {
 	if (token && jwt.verify(token, process.env.JWT_SECRET)) {
 		const tokenData = jwt.decode(token, process.env.JWT_SECRET);
 		res.locals.loginInfo =
-			tokenData.username + " " + tokenData.userId + " " + tokenData.role;
+			tokenData.username + " " + tokenData.userId + " " + tokenData.type;
 		res.locals.loginUser = tokenData.username;
 		res.locals.loginId = tokenData.userId;
 		res.locals.isLoggedIn = true;
+		res.locals.loginType = tokenData.type;
 	} else {
-		res.locals.loginInfo = "not logged in";
+		res.locals.loginInfo = "Not logged in";
 		res.locals.isLoggedIn = false;
 	}
 	next();

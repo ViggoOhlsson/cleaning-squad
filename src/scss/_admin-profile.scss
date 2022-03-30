@@ -1,0 +1,29 @@
+.admin-profile-cnt {
+	display: flex;
+	flex-direction: center;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+
+	.din-admin {
+		font-size: 3rem;
+		font-weight: 700;
+		color: hsl(0, 0%, 100%);
+		text-transform: uppercase;
+		margin: 0.5em;
+	}
+
+	.admin-profile-card {
+		display: flex;
+		flex-direction: column;
+		background-color: hsl(0, 19%, 93%);
+		border-radius: 0.8em;
+		padding: 4em;
+		width: 20vw;
+	}
+
+	.admin-info {
+		font-size: 1.4rem;
+	}
+}
