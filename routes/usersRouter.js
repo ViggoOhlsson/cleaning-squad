@@ -15,7 +15,7 @@ router.post("/registrera", async (req, res) => {
 	UserModel.findOne({ username }, async (err, user) => {
 		if (user) {
 			res.render("anvandare/users-create", {
-				error: "Användarnamnet är upptaget.",
+				error: "Användarnamnet är upptaget!",
 			});
 		} else if (password.length <= 3) {
 			res.render("users/users-create", {
@@ -31,7 +31,7 @@ router.post("/registrera", async (req, res) => {
 				address,
 			});
 			await newUser.save();
-			res.redirect("/");
+			res.redirect("/anvandare/logga-in");
 		}
 	});
 });
