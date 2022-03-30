@@ -44,10 +44,10 @@ router.post("/", async (req, res) => {
 
 	EmployeeModel.findOne({ username }, (err, employee) => {
 		if (employee && utils.comparePassword(password, employee.password)) {
-			const userData = { userId: employee._id, username };
+			const userData = { userId: employee._id, username, type: employee.type };
 			const accessToken = jwt.sign(userData, process.env.JWT_SECRET);
 			res.cookie("token", accessToken);
-			console.log("Inloggning lyckades");
+
 			res.redirect("/");
 		} else {
 			res.render("admin/admin-login", { error: "Inloggning misslyckades" });

@@ -5,8 +5,11 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
-const helpers = require("./helpers");
 const port = 80;
+
+const helpers = require("./helpers.js");
+const UserModel = require("./models/UsersModel.js");
+const EmployeeModel = require("./models/EmployeeModel.js");
 
 const app = express();
 
@@ -53,7 +56,11 @@ app.use("/admin", adminsRouter);
 app.use("/bokning", bookingsRouter);
 
 app.get("/", async (req, res) => {
-	res.render("home");
+	const user = await UserModel.findById(req.params.id);
+	const employee = await EmployeeModel.findById(req.params.id);
+
+	console.log(res.locals.loginType);
+	res.render("home", { user, employee });
 });
 
 app.listen(port, () => {

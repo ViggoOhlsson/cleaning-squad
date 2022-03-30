@@ -9,14 +9,34 @@
 </label>
 <div id="sidebarMenu">
 	<ul class="sidebarMenuInner">
+
 		{{#if isLoggedIn}}
-			<li>{{loginUser}}<a href="/anvandare/{{loginId}}" class="account-li"><span
-					>ditt konto</span></a></li>
-			<li><a href="/bookning">boka en städning</a></li>
+			{{#if loginType}}
+
+				<li>{{loginUser}}
+					<a href="/admin/{{loginId}}" class="account-li">
+						<span>ditt konto</span>
+					</a>
+				</li>
+
+			{{else}}
+
+				<li>{{loginUser}}
+					<a href="/anvandare/{{loginId}}" class="account-li">
+						<span>ditt konto</span>
+					</a>
+				</li>
+
+				<li><a href="/bokning">boka en städning</a></li>
+			{{/if}}
 			<li><a href="/anvandare/logga-ut">logga ut</a></li>
+
 		{{else}}
+
 			<li><a href="/anvandare/logga-in">logga In</a></li>
+
 		{{/if}}
+
 		<li><a href="/kontakt">kontakta oss</a></li>
 	</ul>
 </div>
