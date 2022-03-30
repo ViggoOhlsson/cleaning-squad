@@ -2,19 +2,19 @@
 
 html,
 body {
-  margin: 0 auto;
-  padding: 0;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  scroll-behavior: smooth;
-  font-family: "Roboto", sans-serif;
-  font-size: 62.5%;
-  color: #303030;
-  background-color: hsl(201, 43%, 34%);
+	margin: 0 auto;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	scroll-behavior: smooth;
+	font-family: "Roboto", sans-serif;
+	font-size: 62.5%;
+	color: #303030;
+	background-color: hsl(201, 43%, 34%);
 
-  overflow-x: hidden;
-  height: 100%;
+	overflow-x: hidden;
+	height: 100%;
 }
 
 @import "./_navbar.scss";
@@ -27,3 +27,4 @@ body {
 @import "./_admin-create.scss";
 @import "./_admin-login.scss";
 @import "./_booking-create.scss";
+@import "./_admin-profile.scss";

@@ -16,8 +16,8 @@ router.get("/skapa", (req, res) => {
 
 router.post("/skapa", async (req, res) => {
 	const { username, password, confirmPassword, type } = req.body;
-	EmployeeModel.findOne({ username }, async (err, user) => {
-		if (user) {
+	EmployeeModel.findOne({ username }, async (err, employee) => {
+		if (employee) {
 			res.render("admin/admin-create", {
 				error: "Användarnamnet är upptaget.",
 			});
@@ -42,9 +42,9 @@ router.post("/skapa", async (req, res) => {
 router.post("/", async (req, res) => {
 	const { username, password } = req.body;
 
-	EmployeeModel.findOne({ username }, (err, user) => {
-		if (user && utils.comparePassword(password, user.password)) {
-			const userData = { userId: user._id, username };
+	EmployeeModel.findOne({ username }, (err, employee) => {
+		if (employee && utils.comparePassword(password, employee.password)) {
+			const userData = { userId: employee._id, username };
 			const accessToken = jwt.sign(userData, process.env.JWT_SECRET);
 			res.cookie("token", accessToken);
 			console.log("Logga in lyckades");
@@ -53,6 +53,12 @@ router.post("/", async (req, res) => {
 			res.render("admin/admin-login", { error: "Login misslyckades" });
 		}
 	});
+});
+
+router.get("/:id", async (req, res) => {
+	const employee = await EmployeeModel.findById(req.params.id);
+
+	res.render("admin/admin-profile", { employee });
 });
 
 module.exports = router;
