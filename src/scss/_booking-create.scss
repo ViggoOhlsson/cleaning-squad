@@ -1,56 +1,56 @@
 .booking {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 110vh;
-  width: 100vw;
-  gap: 1em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	gap: 1em;
 }
 .booking-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2em;
 }
 
 .booking-input {
-  border-radius: 0.4em;
-  outline-style: none;
-  padding: 0.4em;
-  width: 20vw;
-  border: 2px solid hsl(0, 0%, 76%);
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
+	border-radius: 0.4em;
+	outline-style: none;
+	padding: 0.4em;
+	width: 20vw;
+	border: 2px solid hsl(0, 0%, 76%);
+	font-family: "Roboto", sans-serif;
+	font-weight: 300;
 }
 
 .payment-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2em;
 }
 
 .text1 {
-  color: white;
-  font-size: 32px;
+	color: white;
+	font-size: 32px;
 }
 
 .text2 {
-  color: white;
-  font-size: 18px;
+	color: white;
+	font-size: 18px;
 }
 
 .booking-btn {
-  justify-content: center;
-  background-color: hsl(348, 97%, 63%);
-  color: hsl(0, 0%, 98%);
-  font-weight: 600;
-  cursor: pointer;
-  border: none;
-  padding: 0.5em;
-  box-shadow: 0px 3px 5px hsl(0, 0%, 41%);
-  border-radius: 0.4em;
+	justify-content: center;
+	background-color: hsl(348, 97%, 63%);
+	color: hsl(0, 0%, 98%);
+	font-weight: 600;
+	cursor: pointer;
+	border: none;
+	padding: 0.5em;
+	box-shadow: 0px 3px 5px hsl(0, 0%, 41%);
+	border-radius: 0.4em;
 }

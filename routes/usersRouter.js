@@ -4,6 +4,7 @@ const express = require("express");
 const router = express.Router();
 const utils = require("../utils.js");
 const UserModel = require("../models/UsersModel.js");
+const BookingModel = require("../models/BookingModel.js");
 const jwt = require("jsonwebtoken");
 
 router.get("/registrera", (req, res) => {
@@ -66,9 +67,10 @@ router.get("/logga-ut", (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
-	const user = await UserModel.findById(req.params.id);
-
-	res.render("users/users-account", user);
+	const user = await UserModel.findById(req.params.id).lean();
+	const booking = await BookingModel.find({ user: res.locals.loginId }).lean();
+	console.log(booking);
+	res.render("users/users-account", { user, booking });
 });
 
 module.exports = router;

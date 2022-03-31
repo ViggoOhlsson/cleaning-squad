@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.render("bookings/bookings-create");
+	res.render("bookings/bookings-create");
 });
 
 router.post("/", async (req,res) => {
@@ -19,12 +19,16 @@ router.post("/", async (req,res) => {
   req.body.cleaner = await EmployeeModel.findOne({type: "employee"}).skip(Math.floor(Math.random() * await EmployeeModel.find({type: "employee"}).count())).lean()
   req.body.user = new mongoose.Types.ObjectId(res.locals.loginId)
 
-  console.log("after processing", req.body)
-  let booking = new BookingModel(req.body)
-  console.log("BookingModel:", booking)
-  await booking.save()
-  res.redirect("/bokning")
-})
+	req.body.status = "Inte Utförd";
 
+	req.body.cleaner = await EmployeeModel.findOne({ type: "employee" }).lean();
+	req.body.user = new mongoose.Types.ObjectId(res.locals.loginId);
+
+	console.log("after processing", req.body);
+	let booking = new BookingModel(req.body);
+	console.log("BookingModel:", booking);
+	await booking.save();
+	res.redirect("/anvandare/" + res.locals.loginId);
+});
 
 module.exports = router;

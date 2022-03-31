@@ -2,7 +2,6 @@
 	<h2 class="text1">Boka städning</h2>
 	<h3 class="text2">Personuppgifter</h3>
 	<form class="booking-form" action="" method="post">
-		
 		<input
 			class="booking-input"
 			type="text"
@@ -11,9 +10,11 @@
 		/>
 		<input
 			class="booking-input"
-			type="number"
+			type="tel"
 			name="zip"
 			placeholder="Postnummer"
+			inputmode="numeric"
+			maxlength="5"
 		/>
 		<input class="booking-input" type="text" name="county" placeholder="Ort" />
 		<input class="booking-input" type="date" name="date" placeholder="" />
@@ -29,26 +30,48 @@
 			class="booking-input"
 			type="text"
 			name="card-name"
-			placeholder="Namn på kortet"
+			placeholder="Namn på kortinnehavaren"
 		/>
 		<input
 			class="booking-input"
-			type="number"
+			type="tel"
+			inputmode="numeric"
+			pattern="[0-9\s]{13,19}"
+			autocomplete="cc-number"
+			maxlength="19"
 			name="card-number"
 			placeholder="Kortnummer"
 		/>
 		<input
 			class="booking-input"
-			type="number"
+			type="month"
+			id="start"
+			name="start"
+			min="2022-03"
+			value="2022-04"
 			name="card-date"
 			placeholder="Utgångsdatum"
 		/>
 		<input
 			class="booking-input"
-			type="number"
-			name="card-cvv"
+			type="tel"
+			inputmode="numeric"
+			maxlength="3"
 			placeholder="CVV"
+			name="card-cvv"
 		/>
+		<h3 class="text2">Typ av städning</h3>
+		<select
+			class="booking-input"
+			name="type"
+			value="type"
+			placeholder="Typ av städning"
+		>
+			<option value="Basic" name="Basic">Basic</option>
+			<option value="Toppklass" name="Toppklass">Toppklass</option>
+			<option value="Diamant" name="Diamant">Diamant</option>
+			<option value="Fönstertvätt" name="Fönstertvätt">Fönstertvätt</option>
+		</select>
 		<input class="booking-btn" type="submit" value="Slutför bokning" />
 	</form>
 	<form class="payment-form" action="" method="post">
