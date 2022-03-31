@@ -4,17 +4,22 @@
 
 	<div class="users-card">
 
-		<span class="profile-info"><b>Användarnamn:</b> {{username}}</span>
-		<span class="profile-info"><b>Email:</b> {{email}}</span>
-		<span class="profile-info"><b>Address:</b> {{address}}</span>
+		<span class="profile-info"><b>Användarnamn:</b> {{user.username}}</span>
+		<span class="profile-info"><b>Email:</b> {{user.email}}</span>
+		<span class="profile-info"><b>Address:</b> {{user.address}}</span>
 
 	</div>
 
 	<span class="your-bookings">dina bokningar:</span>
 
 	<div class="booking-card">
+		{{#each booking}}
+			<div class="booking-frame">
+				<span class="profile-info">{{type}}</span>
+				<span class="profile-info">{{time}}</span>
+			</div>
 
-		<h2>INSERT BOKNING HÄR</h2>
+		{{/each}}
 	</div>
 
 </div>
