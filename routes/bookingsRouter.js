@@ -16,8 +16,7 @@ router.post("/", async (req,res) => {
   console.log(req.body.time)
   
   req.body.status = "Inte Utförd"
-  req.body.type = "Fönstertvätt"
-  req.body.cleaner = await EmployeeModel.findOne({type: "employee"}).lean()
+  req.body.cleaner = await EmployeeModel.findOne({type: "employee"}).skip(Math.floor(Math.random() * await EmployeeModel.find({type: "employee"}).count())).lean()
   req.body.user = new mongoose.Types.ObjectId(res.locals.loginId)
 
   console.log("after processing", req.body)
