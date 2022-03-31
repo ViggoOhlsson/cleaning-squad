@@ -15,14 +15,9 @@ router.post("/", async (req,res) => {
   req.body.time = new Date(req.body.date + " " + req.body.time)
   console.log(req.body.time)
   
-  req.body.status = "Inte Utförd"
+  req.body.status = "Ej Utförd"
   req.body.cleaner = await EmployeeModel.findOne({type: "employee"}).skip(Math.floor(Math.random() * await EmployeeModel.find({type: "employee"}).count())).lean()
   req.body.user = new mongoose.Types.ObjectId(res.locals.loginId)
-
-	req.body.status = "Inte Utförd";
-
-	req.body.cleaner = await EmployeeModel.findOne({ type: "employee" }).lean();
-	req.body.user = new mongoose.Types.ObjectId(res.locals.loginId);
 
 	console.log("after processing", req.body);
 	let booking = new BookingModel(req.body);
