@@ -15,7 +15,7 @@ router.post("/registrera", async (req, res) => {
 	UserModel.findOne({ username }, async (err, user) => {
 		if (user) {
 			res.render("anvandare/users-create", {
-				error: "Användarnamnet är upptaget.",
+				error: "Användarnamnet är upptaget!",
 			});
 		} else if (password.length <= 3) {
 			res.render("users/users-create", {
@@ -31,7 +31,7 @@ router.post("/registrera", async (req, res) => {
 				address,
 			});
 			await newUser.save();
-			res.redirect("/");
+			res.redirect("/anvandare/logga-in");
 		}
 	});
 });
@@ -52,10 +52,10 @@ router.post("/logga-in", async (req, res) => {
 			const userData = { userId: user._id, username };
 			const accessToken = jwt.sign(userData, process.env.JWT_SECRET);
 			res.cookie("token", accessToken);
-			console.log("Logga in lyckades");
+
 			res.redirect("/");
 		} else {
-			res.render("users/users-login", { error: "Login misslyckades" });
+			res.render("users/users-login", { error: "Inloggning misslyckades" });
 		}
 	});
 });
@@ -68,7 +68,7 @@ router.get("/logga-ut", (req, res) => {
 router.get("/:id", async (req, res) => {
 	const user = await UserModel.findById(req.params.id);
 
-	res.render("users/users-account", { user });
+	res.render("users/users-account", user);
 });
 
 module.exports = router;

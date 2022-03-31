@@ -19,7 +19,7 @@ router.post("/skapa", async (req, res) => {
 	EmployeeModel.findOne({ username }, async (err, employee) => {
 		if (employee) {
 			res.render("admin/admin-create", {
-				error: "Användarnamnet är upptaget.",
+				error: "Användarnamnet är upptaget!",
 			});
 		} else if (password.length <= 3) {
 			res.render("admin/admin-create", {
@@ -34,7 +34,7 @@ router.post("/skapa", async (req, res) => {
 				type,
 			});
 			await newEmployee.save();
-			res.redirect("/");
+			res.redirect("/admin");
 		}
 	});
 });
@@ -44,13 +44,13 @@ router.post("/", async (req, res) => {
 
 	EmployeeModel.findOne({ username }, (err, employee) => {
 		if (employee && utils.comparePassword(password, employee.password)) {
-			const userData = { userId: employee._id, username };
+			const userData = { userId: employee._id, username, type: employee.type };
 			const accessToken = jwt.sign(userData, process.env.JWT_SECRET);
 			res.cookie("token", accessToken);
-			console.log("Logga in lyckades");
+
 			res.redirect("/");
 		} else {
-			res.render("admin/admin-login", { error: "Login misslyckades" });
+			res.render("admin/admin-login", { error: "Inloggning misslyckades" });
 		}
 	});
 });
@@ -58,7 +58,7 @@ router.post("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
 	const employee = await EmployeeModel.findById(req.params.id);
 
-	res.render("admin/admin-profile", { employee });
+	res.render("admin/admin-profile", employee);
 });
 
 module.exports = router;
