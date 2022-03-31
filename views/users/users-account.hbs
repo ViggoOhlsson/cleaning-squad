@@ -15,9 +15,9 @@
 	<div class="booking-card">
 		{{#each booking}}
 			<div class="booking-frame">
-				<span class="profile-info">{{type}}</span>
-				<span class="profile-info">{{createStamp time}}</span>
-				<span class="profile-info">Cleaner: {{cleaner.username}}</span>
+				<span class="profile-info"><b>Typ av städning: </b>{{type}}</span>
+				<span class="profile-info"><b>Datum: </b>{{createStamp time}}</span>
+				<span class="profile-info"><b>Städare: </b> {{cleaner.username}}</span>
 			</div>
 
 		{{/each}}

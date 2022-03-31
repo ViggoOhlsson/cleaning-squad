@@ -46,4 +46,15 @@
 		padding: 4em;
 		width: 20vw;
 	}
+
+	.admin-booking-frame {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 0.8em;
+	}
+
+	.admin-profile-info {
+		font-size: 1.6rem;
+	}
 }

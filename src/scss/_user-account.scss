@@ -46,4 +46,10 @@
 		padding: 4em;
 		width: 20vw;
 	}
+
+	.booking-frame {
+		display: flex;
+		flex-direction: column;
+		gap: 0.8em;
+	}
 }
