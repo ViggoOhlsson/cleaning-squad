@@ -4,13 +4,22 @@
 
 	<div class="admin-profile-card">
 
-		<span class="admin-info"><b>Användarnamn: </b> {{username}}</span>
+		<span class="admin-info"><b>Användarnamn: </b> {{user.username}}</span>
 
 	</div>
 
 	<span class="admin-your-bookings">dina bokningar:</span>
 
 	<div class="admin-booking-card">
+		{{#each bookings}}
+			<div class="booking-frame">
+				<span class="profile-info">{{type}} | </span>
+				<span class="profile-info">{{address}} | </span>
+				<span class="profile-info">{{createStamp time}} | </span>
+				<span class="profile-info">Cleaner: {{cleaner.username}}</span>
+			</div>
+
+		{{/each}}
 
 		<h2>INSERT BOKNING HÄR</h2>
 	</div>

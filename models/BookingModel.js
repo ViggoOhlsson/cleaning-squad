@@ -2,7 +2,7 @@ const { model, Schema } = require("mongoose");
 
 const bookingSchema = new Schema({
 	user: { type: Schema.Types.ObjectId, required: true },
-	cleaner: { type: Schema.Types.ObjectId, required: true },
+	cleaner: { type: Schema.Types.ObjectId, required: true, ref: "Employees"},
 	time: { type: Number, required: true, default: Date.now },
 	address: { type: String, required: true },
 	county: { type: String, required: true },

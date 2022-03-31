@@ -4,6 +4,7 @@ const express = require("express");
 const router = express.Router();
 const utils = require("../utils.js");
 const EmployeeModel = require("../models/EmployeeModel.js");
+const BookingModel = require("../models/BookingModel.js");
 const jwt = require("jsonwebtoken");
 
 router.get("/", (req, res) => {
@@ -56,9 +57,11 @@ router.post("/", async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
-	const employee = await EmployeeModel.findById(req.params.id);
+	const user = await EmployeeModel.findById(req.params.id).lean();
 
-	res.render("admin/admin-profile", employee);
+	const bookings = await BookingModel.find({cleaner: res.locals.loginId}).populate("cleaner").lean()
+
+	res.render("admin/admin-profile", {user, bookings});
 });
 
 module.exports = router;

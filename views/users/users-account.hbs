@@ -16,7 +16,8 @@
 		{{#each booking}}
 			<div class="booking-frame">
 				<span class="profile-info">{{type}}</span>
-				<span class="profile-info">{{time}}</span>
+				<span class="profile-info">{{createStamp time}}</span>
+				<span class="profile-info">Cleaner: {{cleaner.username}}</span>
 			</div>
 
 		{{/each}}
